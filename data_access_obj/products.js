@@ -1,4 +1,4 @@
-const db = require("../db-old/db");
+const db = require("../db/db");
 
 class ProductsDAO {
   getProducts(){
@@ -15,10 +15,7 @@ class ProductsDAO {
         category,
         description
       })
-      .returning("*")
-      .then(rows => {
-        return rows[0];
-      });
+      .returning("id");
     return id;
   };
 }
